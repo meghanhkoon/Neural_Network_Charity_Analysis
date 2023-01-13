@@ -29,4 +29,20 @@ Original DataFrame containing our original data source: [charity_data.csv](https
 3. What variable(s) are neither targets nor features, and should be removed from the input data?
 - Originally, the only variables that were removed from the input data were ```NAME``` and ```EIN```. These are both identification columns. However, after optimization, we ended up dropping ```STATUS``` and ```SPECIAL_CONSIDERATIONS``` as well. 
 
+
+### Compiling, Training and Evaluating the Model 
+1. How many neurons, layers, and activation functions did you select for your neural network model, and why?
+- In the original model, layer 1 had 80 neurons with a relu activation. The second hidden layer had 30 neurons. Lastly, the output layer used an activation "sigmoid". 
+
+2. Were you able to achieve the target model performance?
+- After the original model, we were able to achieve only 72.5% Accuracy with a Loss of 0.56. This is not a satisfying target model performance for predicting the outcome of success for the charity donations.
+
+3. What steps did you take to try and increase model performance?
+- Since we had below a 75% Accuracy rate, the following trials were done to try and reach for optimization levels. However, after trying three different times, we were still not able to reach 75% accuracy levels. 
+- First, features ```STATUS``` and ```SPECIAL_CONSIDERATIONS``` were dropped. 
+- Then, binning numbers were increased to reduce the value counts for the ```CLASSIFICATION``` column. 
+- Next, we experimented with adding neurons, hidden layers, and changing the activation functions. 
+- Overall, we could not get the desired 75% Accuracy levels for this deep-learning model. 
+
 ## Summary 
+The deep learning neural network model could not reach 75% Accuracy Levels even with experimenting with different techniques for optimization. For future reference, we could try a different machine learning model such as a Supervised Random Forest Classifier since Random forest models and neural networks can handle nonlinear and tabular data.  Both output and feature selection of random forest models are able to handle outliers and nonlinear data. From looking at the value counts for some of the features, we know that ```ASK_AMT``` column had many outliers. 
